@@ -556,9 +556,10 @@ namespace WindowsFormsApp1
 			// 
 			// _hlblNetCoreSignture
 			// 
+			this._hlblNetCoreSignture.AutoSize = true;
 			this._hlblNetCoreSignture.BackColor = System.Drawing.SystemColors.Control;
 			this._hlblNetCoreSignture.BaseStylesheet = null;
-			this._hlblNetCoreSignture.Dock = System.Windows.Forms.DockStyle.Left;
+			this._hlblNetCoreSignture.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._hlblNetCoreSignture.Location = new System.Drawing.Point(104, 108);
 			this._hlblNetCoreSignture.Name = "_hlblNetCoreSignture";
 			this._hlblNetCoreSignture.Size = new System.Drawing.Size(0, 14);

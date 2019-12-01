@@ -65,10 +65,6 @@ namespace Haapps.Tools.IntrinsicsGuide
 							var match = Regex.Match(c.Content.ToFullString(), @"_m(?:m)?[\d]*_[\w_]+");
 							if (!match.Success) continue;
 							var intrinsicIntelName = match.Value;
-							if (intrinsicIntelName == "_mm_sfence")
-							{
-								var s = 0;
-							}
 							var methodDeclarationSyntax = ((MethodDeclarationSyntax) syntaxNode);
 							var methodSymbol = semanticModel.GetDeclaredSymbol(methodDeclarationSyntax);
 							var className = methodSymbol.ContainingType.Name;

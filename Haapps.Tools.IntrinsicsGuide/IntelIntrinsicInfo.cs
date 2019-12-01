@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace Haapps.Tools.IntrinsicsGuide
 {
-	public class IntelIntrinsicInfo
+	public class IntelIntrinsicInfo : IIntrinsicInfo
 	{
 		private IntelIntrinsicInfo(XmlNode node)
 		{

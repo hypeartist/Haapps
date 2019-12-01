@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <None Remove="NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Controls\HtmlRenderer\Core\Utils\ImageError.png" />
     <None Remove="Controls\HtmlRenderer\Core\Utils\ImageLoad.png" />
   </ItemGroup>
@@ -20,6 +26,10 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.4.0-beta4-final" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.4.0-beta4-final" />
     <PackageReference Include="Topten.RichTextKit" Version="0.1.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Haapps.Tools.IntrinsicsGuide\Haapps.Tools.IntrinsicsGuide.csproj" />
   </ItemGroup>
 
   <ItemGroup>
