@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="intrinsics_list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="intrinsic" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="header" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+              <xs:element name="type" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="type_Text" msdata:Ordinal="0">
+                    <xs:extension base="xs:string">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CPUID" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="CPUID_Text" msdata:Ordinal="0">
+                    <xs:extension base="xs:string">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="category" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="category_Text" msdata:Ordinal="0">
+                    <xs:extension base="xs:string">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="varname" type="xs:string" />
+                  <xs:attribute name="type" type="xs:string" />
+                  <xs:attribute name="hint" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="operation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="operation_Text" msdata:Ordinal="1">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="validate" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="instruction" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" />
+                  <xs:attribute name="form" type="xs:string" />
+                  <xs:attribute name="xed" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="perfdata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="arch" type="xs:string" />
+                  <xs:attribute name="lat" type="xs:string" />
+                  <xs:attribute name="tpt" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="tech" type="xs:string" />
+            <xs:attribute name="rettype" type="xs:string" />
+            <xs:attribute name="name" type="xs:string" />
+            <xs:attribute name="sequence" type="xs:string" />
+            <xs:attribute name="vexEq" type="xs:string" />
+            <xs:attribute name="dontShowZeroUnmodMsg" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" />
+      <xs:attribute name="date" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="intrinsics_list" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

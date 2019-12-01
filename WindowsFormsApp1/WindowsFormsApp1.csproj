@@ -1,0 +1,158 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Controls\HtmlRenderer\Core\Utils\ImageError.png" />
+    <None Remove="Controls\HtmlRenderer\Core\Utils\ImageLoad.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Controls\HtmlRenderer\Core\Utils\ImageError.png" />
+    <Content Include="Controls\HtmlRenderer\Core\Utils\ImageLoad.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.4.0-beta4-final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.4.0-beta4-final" />
+    <PackageReference Include="Topten.RichTextKit" Version="0.1.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\FastColoredTextBox\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\DocumentMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\FastColoredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\HotkeysEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\HotkeysEditorForm.Designer.cs">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\ReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\ReplaceForm.Designer.cs">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\Ruler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\Ruler.Designer.cs">
+      <DependentUpon>Ruler.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FastColoredTextBox\UnfocusablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\FluentListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Implementation\Enums.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Implementation\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Lists\AdvancedListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Lists\FastListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Lists\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Lists\VirtualFluentListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\OLVColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Rendering\Renderers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Rendering\Styles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Rendering\TreeRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\SubControls\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\SubControls\ToolStripCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Utilities\ColumnSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FluentListView\Utilities\ColumnSelectionForm.Designer.cs">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\HintTextBox\HintTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\HtmlRenderer\WinForms\HtmlLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\HtmlRenderer\WinForms\HtmlPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\HtmlRenderer\WinForms\HtmlToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\FastColoredTextBox\FastColoredTextBox.resx">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\FastColoredTextBox\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\FastColoredTextBox\GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\FastColoredTextBox\HotkeysEditorForm.resx">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\FastColoredTextBox\ReplaceForm.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\FluentListView\Utilities\ColumnSelectionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

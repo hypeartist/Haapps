@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Haapps.Gfx.Agg.WinForms.Test</AssemblyName>
+    <RootNamespace>Haapps.Gfx.Agg.WinForms.Test</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Examples\AADemo\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Haapps.Gfx.Agg.WinForms.Controls\Haapps.Gfx.Agg.WinForms.Controls.csproj" />
+    <ProjectReference Include="..\Haapps.Gfx.Agg\Haapps.Gfx.Agg.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Examples\AATest\DemoSurface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Examples\AlphaGradient\DemoSurface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Examples\AlphaMask1\DemoSurface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Examples\AlphaMask2\DemoSurface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

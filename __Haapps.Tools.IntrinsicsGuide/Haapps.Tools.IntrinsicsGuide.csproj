@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.4.0-beta4-final\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.4.0-beta4-final\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4282CBEA-78EB-4898-9E18-8ECF050EF6FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Haapps.Tools.IntrinsicsGuide</RootNamespace>
+    <AssemblyName>Haapps.Tools.IntrinsicsGuide</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.CodeAnalysis, Version=3.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.3.4.0-beta4-final\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.3.4.0-beta4-final\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.0-preview3.19551.4\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0-preview5.19224.8\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.8.0-preview3.19551.4\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0-preview3.19551.4\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.Intrinsics">
+      <HintPath>C:\Users\User\.nuget\packages\microsoft.netcore.app.ref\3.0.0\ref\netcoreapp3.0\System.Runtime.Intrinsics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.7.0-preview3.19551.4\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0-preview.18571.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm.Designer.cs">
+      <DependentUpon>AppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\AutocompleteItem.cs" />
+    <Compile Include="Controls\FastColoredTextBox\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\Bookmarks.cs" />
+    <Compile Include="Controls\FastColoredTextBox\Char.cs" />
+    <Compile Include="Controls\FastColoredTextBox\CommandManager.cs" />
+    <Compile Include="Controls\FastColoredTextBox\Commands.cs" />
+    <Compile Include="Controls\FastColoredTextBox\DocumentMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\EncodingDetector.cs" />
+    <Compile Include="Controls\FastColoredTextBox\ExportToHTML.cs" />
+    <Compile Include="Controls\FastColoredTextBox\ExportToRTF.cs" />
+    <Compile Include="Controls\FastColoredTextBox\FastColoredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\FileTextSource.cs" />
+    <Compile Include="Controls\FastColoredTextBox\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\Hints.cs" />
+    <Compile Include="Controls\FastColoredTextBox\Hotkeys.cs" />
+    <Compile Include="Controls\FastColoredTextBox\HotkeysEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\HotkeysEditorForm.Designer.cs">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\LimitedStack.cs" />
+    <Compile Include="Controls\FastColoredTextBox\Line.cs" />
+    <Compile Include="Controls\FastColoredTextBox\LineNumberFormatting.cs" />
+    <Compile Include="Controls\FastColoredTextBox\LinesAccessor.cs" />
+    <Compile Include="Controls\FastColoredTextBox\MacrosManager.cs" />
+    <Compile Include="Controls\FastColoredTextBox\Place.cs" />
+    <Compile Include="Controls\FastColoredTextBox\PlatformType.cs" />
+    <Compile Include="Controls\FastColoredTextBox\Range.cs" />
+    <Compile Include="Controls\FastColoredTextBox\ReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\ReplaceForm.Designer.cs">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\Ruler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\Ruler.Designer.cs">
+      <DependentUpon>Ruler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\Style.cs" />
+    <Compile Include="Controls\FastColoredTextBox\SyntaxDescriptor.cs" />
+    <Compile Include="Controls\FastColoredTextBox\SyntaxHighlighter.cs" />
+    <Compile Include="Controls\FastColoredTextBox\TextSource.cs" />
+    <Compile Include="Controls\FastColoredTextBox\TypeDescriptor.cs" />
+    <Compile Include="Controls\FastColoredTextBox\UnfocusablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FastColoredTextBox\VisualMarker.cs" />
+    <Compile Include="Controls\FluentListView\CellEditing\CellEditKeyEngine.cs" />
+    <Compile Include="Controls\FluentListView\CellEditing\CellEditors.cs" />
+    <Compile Include="Controls\FluentListView\CellEditing\EditorRegistry.cs" />
+    <Compile Include="Controls\FluentListView\DragDrop\DragSource.cs" />
+    <Compile Include="Controls\FluentListView\DragDrop\DropSink.cs" />
+    <Compile Include="Controls\FluentListView\DragDrop\OLVDataObject.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\Cluster.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\ClusteringStrategy.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\ClustersFromGroupsStrategy.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\DateTimeClusteringStrategy.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\FilterMenuBuilder.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\Filters.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\FlagClusteringStrategy.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\ICluster.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\IClusteringStrategy.cs" />
+    <Compile Include="Controls\FluentListView\Filtering\TextMatchFilter.cs" />
+    <Compile Include="Controls\FluentListView\FluentListProperties.cs" />
+    <Compile Include="Controls\FluentListView\FluentListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\FluentListView.DesignTime.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\Attributes.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\Comparers.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\DataSourceAdapter.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\Delegates.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\Enums.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Implementation\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Implementation\GroupingParameters.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\Groups.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\Munger.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\NativeMethods.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\NullableDictionary.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\OLVListItem.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\OLVListSubItem.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\OlvListViewHitTestInfo.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\VirtualGroups.cs" />
+    <Compile Include="Controls\FluentListView\Implementation\VirtualListDataSource.cs" />
+    <Compile Include="Controls\FluentListView\Lists\AdvancedListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Lists\FastListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Lists\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Lists\VirtualFluentListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\OLVColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Rendering\Adornments.cs" />
+    <Compile Include="Controls\FluentListView\Rendering\Decorations.cs" />
+    <Compile Include="Controls\FluentListView\Rendering\Overlays.cs" />
+    <Compile Include="Controls\FluentListView\Rendering\Renderers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Rendering\Styles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Rendering\TreeRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\SubControls\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\SubControls\HeaderControl.cs" />
+    <Compile Include="Controls\FluentListView\SubControls\ToolStripCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\SubControls\ToolTipControl.cs" />
+    <Compile Include="Controls\FluentListView\Utilities\ColumnSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Utilities\ColumnSelectionForm.Designer.cs">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FluentListView\Utilities\Generator.cs" />
+    <Compile Include="Controls\FluentListView\Utilities\OLVExporter.cs" />
+    <Compile Include="Controls\FluentListView\Utilities\TypedObjectListView.cs" />
+    <Compile Include="Controls\HintTextBox\HintTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HintTextBox\MathParser.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RColor.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RDashStyle.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RFontStyle.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RKeyEvent.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RMouseEvent.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RPoint.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RRect.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\Entities\RSize.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RBrush.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RContextMenu.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RControl.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RFont.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RFontFamily.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RGraphics.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RGraphicsPath.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RImage.cs" />
+    <Compile Include="Controls\HtmlRenderer\Adapters\RPen.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\CssData.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\CssDefaults.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\Border.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssBox.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssBoxFrame.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssBoxHr.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssBoxImage.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssBoxProperties.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssLayoutEngine.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssLayoutEngineTable.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssLength.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssLineBox.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssRect.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssRectImage.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssRectWord.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssSpacingBox.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\CssUnit.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\HoverBoxBlock.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Dom\HtmlTag.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\CssBlock.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\CssBlockSelectorItem.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlGenerationStyle.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlImageLoadEventArgs.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlLinkClickedEventArgs.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlLinkClickedException.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlRefreshEventArgs.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlRenderErrorEventArgs.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlRenderErrorType.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlScrollEventArgs.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\HtmlStylesheetLoadEventArgs.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Entities\LinkElementData.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\BackgroundImageDrawHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\BordersDrawHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\ContextMenuHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\FontsHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\ImageDownloader.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\ImageLoadHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\SelectionHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Handlers\StylesheetLoadHandler.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\HtmlContainerInt.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\HtmlRendererUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Parse\CssParser.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Parse\CssValueParser.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Parse\DomParser.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Parse\HtmlParser.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Parse\RegexParserHelper.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Parse\RegexParserUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\ArgChecker.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\CommonUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\CssConstants.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\CssUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\DomUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\HtmlConstants.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\HtmlUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\RenderUtils.cs" />
+    <Compile Include="Controls\HtmlRenderer\Core\Utils\SubString.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\BrushAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\ContextMenuAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\ControlAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\FontAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\FontFamilyAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\GraphicsAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\GraphicsPathAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\ImageAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\PenAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Adapters\WinFormsAdapter.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\HtmlContainer.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\HtmlLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HtmlRenderer\WinForms\HtmlPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HtmlRenderer\WinForms\HtmlRender.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\HtmlToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HtmlRenderer\WinForms\MetafileExtensions.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Utilities\ClipboardHelper.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Utilities\Utils.cs" />
+    <Compile Include="Controls\HtmlRenderer\WinForms\Utilities\Win32Utils.cs" />
+    <Compile Include="NewFolder1\IntelIntrinsicInfo.cs" />
+    <Compile Include="NewFolder1\Cpuid.cs" />
+    <Compile Include="NewFolder1\DotNetIntrinsicInfo.cs" />
+    <Compile Include="NewFolder1\IIntrinsicInfo.cs" />
+    <Compile Include="NewFolder1\InstructionCategory.cs" />
+    <Compile Include="NewFolder1\InstructionSet.cs" />
+    <Compile Include="NewFolder1\IParameter.cs" />
+    <Compile Include="NewFolder1\OperationType.cs" />
+    <Compile Include="NewFolder1\UniqueColorAttribute.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForm.resx">
+      <DependentUpon>AppForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FastColoredTextBox\FastColoredTextBox.resx">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FastColoredTextBox\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FastColoredTextBox\GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FastColoredTextBox\HotkeysEditorForm.resx">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FastColoredTextBox\ReplaceForm.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FluentListView\Utilities\ColumnSelectionForm.resx">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\coreclr.src.System.Private.CoreLib.shared.System.Runtime.Intrinsics.X86.ZIP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\software.intel.com.IntrinsicsGuide.data-3.4.6.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instrsxarch.h" />
+    <None Include="Resources\hwintrinsiclistxarch.h" />
+    <None Include="Controls\FluentListView\CustomDictionary.xml" />
+    <Content Include="Controls\HtmlRenderer\Core\Utils\ImageError.png" />
+    <Content Include="Controls\HtmlRenderer\Core\Utils\ImageLoad.png" />
+    <None Include="Resources\sort-descending.png" />
+    <None Include="Resources\sort-ascending.png" />
+    <None Include="Resources\filter-icons3.png" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\coffee.jpg" />
+    <None Include="Resources\clear-filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.4.0-beta4-final\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.4.0-beta4-final\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.7\build\Microsoft.CodeAnalysis.Analyzers.props'))" />
+  </Target>
+</Project>

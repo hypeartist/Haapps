@@ -1,0 +1,110 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>3.0.3</Version>
+    <VersionPrefix>3.0.3</VersionPrefix>
+    <TargetFramework>net45</TargetFramework>
+    <Description>FluentListView is a C# wrapper around a .NET ListView, supporting model-bound lists, in-place item editing, drag and drop, icons, themes, trees &amp; data grids, and much more.</Description>
+    <Copyright>GNU General Public License v3.0</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DocumentationFile>bin\$(Configuration)\FluentListView.xml</DocumentationFile>
+    <Authors>Robin Rodricks, Phillip Piper, FluentListView Contributors</Authors>
+    <PackageId>FluentListView</PackageId>
+    <PackageLicenseUrl>https://github.com/robinrodricks/FluentListView/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/robinrodricks/FluentListView/</PackageProjectUrl>
+    <PackageTags>winforms,list,listview,tree,treeview,ui,gui,controls</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RootNamespace>Fluent</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="FluentListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Implementation\Enums.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="OLVColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Implementation\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Lists\FastListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Rendering\TreeRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SubControls\ToolStripCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Utilities\ColumnSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Utilities\ColumnSelectionForm.Designer.cs">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="SubControls\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lists\AdvancedListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Rendering\Renderers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Rendering\Styles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Lists\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Lists\VirtualFluentListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CustomDictionary.xml" />
+    <None Include="Resources\sort-descending.png" />
+    <None Include="Resources\sort-ascending.png" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\clear-filter.png" />
+    <None Include="Resources\filter-icons3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Utilities\ColumnSelectionForm.resx">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Implementation\DragSource.cs" />
+    <Compile Remove="Implementation\DropSink.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Haapps.Gfx.Agg</RootNamespace>
+    <AssemblyName>Haapps.Gfx.Agg</AssemblyName>
+    <LangVersion>8</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="RasterizerAbstract.cs" />
+    <Compile Remove="RasterizerCellsAbstract.cs" />
+    <Compile Remove="RasterizerScanlineAAAbstract.cs" />
+    <Compile Remove="RasterizerScanlineAbstract.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Haapps.Utils.PodMemory\Haapps.Utils.PodMemory.csproj" />
+  </ItemGroup>
+
+</Project>

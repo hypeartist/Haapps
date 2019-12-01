@@ -1,0 +1,171 @@
+﻿// *****************************************************************************
+// BSD 3-Clause License (https://github.com/ComponentFactory/Krypton/blob/master/LICENSE)
+//  © Component Factory Pty Ltd, 2006-2019, All rights reserved.
+// The software and associated documentation supplied hereunder are the 
+//  proprietary information of Component Factory Pty Ltd, 13 Swallows Close, 
+//  Mornington, Vic 3931, Australia and are supplied subject to license terms.
+// 
+//  Modifications by Peter Wagner(aka Wagnerp) & Simon Coghlan(aka Smurf-IV) 2017 - 2019. All rights reserved. (https://github.com/Wagnerp/Krypton-NET-5.470)
+//  Version 5.470.0.0  www.ComponentFactory.com
+// *****************************************************************************
+
+using System.Drawing;
+
+namespace ComponentFactory.Krypton.Toolkit
+{
+    /// <summary>
+    /// Redirect all border requests directly to the palette instance.
+    /// </summary>
+    public class PaletteBorderToPalette : IPaletteBorder
+    {
+	    private readonly IPalette _palette;
+
+	    /// <summary>
+        /// Initialize a new instance of the PaletteBorderToPalette class.
+        /// </summary>
+        /// <param name="palette">Source for getting all values.</param>
+        /// <param name="style">Style of values required.</param>
+        public PaletteBorderToPalette(IPalette palette,
+                                      PaletteBorderStyle style)
+        {
+            // Remember inheritance
+            _palette = palette;
+            BorderStyle = style;
+        }
+
+	    /// <summary>
+        /// Gets and sets the fixed border style.
+        /// </summary>
+        public PaletteBorderStyle BorderStyle { get; set; }
+
+	    /// <summary>
+        /// Gets the actual border draw value.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>InheritBool value.</returns>
+        public InheritBool GetBorderDraw(PaletteState state)
+        {
+            return _palette.GetBorderDraw(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the actual borders to draw value.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>PaletteDrawBorders value.</returns>
+        public PaletteDrawBorders GetBorderDrawBorders(PaletteState state)
+        {
+            return _palette.GetBorderDrawBorders(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the actual border graphics hint value.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>PaletteGraphicsHint value.</returns>
+        public PaletteGraphicsHint GetBorderGraphicsHint(PaletteState state)
+        {
+            return _palette.GetBorderGraphicsHint(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the actual first border color.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Color value.</returns>
+        public Color GetBorderColor1(PaletteState state)
+        {
+            return _palette.GetBorderColor1(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the second border color.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Color value.</returns>
+        public Color GetBorderColor2(PaletteState state)
+        {
+            return _palette.GetBorderColor2(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the color drawing style.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Color drawing style.</returns>
+        public PaletteColorStyle GetBorderColorStyle(PaletteState state)
+        {
+            return _palette.GetBorderColorStyle(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the color alignment style.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Color alignment style.</returns>
+        public PaletteRectangleAlign GetBorderColorAlign(PaletteState state)
+        {
+            return _palette.GetBorderColorAlign(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the color border angle.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Angle used for color drawing.</returns>
+        public float GetBorderColorAngle(PaletteState state)
+        {
+            return _palette.GetBorderColorAngle(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the border width.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Border width.</returns>
+        public int GetBorderWidth(PaletteState state)
+        {
+            return _palette.GetBorderWidth(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the border rounding.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Border rounding.</returns>
+        public int GetBorderRounding(PaletteState state)
+        {
+            return _palette.GetBorderRounding(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets a border image.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Image instance.</returns>
+        public Image GetBorderImage(PaletteState state)
+        {
+            return _palette.GetBorderImage(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the border image style.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Image style value.</returns>
+        public PaletteImageStyle GetBorderImageStyle(PaletteState state)
+        {
+            return _palette.GetBorderImageStyle(BorderStyle, state);
+        }
+
+	    /// <summary>
+        /// Gets the image alignment style.
+        /// </summary>
+        /// <param name="state">Palette value should be applicable to this state.</param>
+        /// <returns>Image alignment style.</returns>
+        public PaletteRectangleAlign GetBorderImageAlign(PaletteState state)
+        {
+            return _palette.GetBorderImageAlign(BorderStyle, state);
+        }
+    }
+}
