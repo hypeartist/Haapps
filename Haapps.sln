@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp1", "Windows
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Haapps.Tools.IntrinsicsGuide", "Haapps.Tools.IntrinsicsGuide\Haapps.Tools.IntrinsicsGuide.csproj", "{268F9C1B-FE2F-4379-84F6-29F6D65DCF9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haapps.Utils.Uth", "Haapps.Utils.Uth\Haapps.Utils.Uth.csproj", "{6267C281-768F-442A-B0A9-0D31FF88B58C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{3E2E7191-0B69-4626-95EB-A8039B6FA978}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{268F9C1B-FE2F-4379-84F6-29F6D65DCF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{268F9C1B-FE2F-4379-84F6-29F6D65DCF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{268F9C1B-FE2F-4379-84F6-29F6D65DCF9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6267C281-768F-442A-B0A9-0D31FF88B58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6267C281-768F-442A-B0A9-0D31FF88B58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6267C281-768F-442A-B0A9-0D31FF88B58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6267C281-768F-442A-B0A9-0D31FF88B58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2E7191-0B69-4626-95EB-A8039B6FA978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2E7191-0B69-4626-95EB-A8039B6FA978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2E7191-0B69-4626-95EB-A8039B6FA978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2E7191-0B69-4626-95EB-A8039B6FA978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
